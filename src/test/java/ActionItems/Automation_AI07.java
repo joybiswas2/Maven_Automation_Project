@@ -9,7 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
+//testing
 public class Automation_AI07 extends ReusableAnnotations{
     @Test(priority = 1)
     public void mortgageCalculators(){
