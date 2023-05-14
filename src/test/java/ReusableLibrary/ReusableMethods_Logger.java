@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -157,6 +158,20 @@ public class ReusableMethods_Logger {
             logger.log(LogStatus.FAIL, "Error Occured while taking SCREENSHOT!!! " + e);
         }
     }//end of getScreenshot method
+
+    public  static void scrollByElement(WebDriver driver, String xpath, ExtentTest logger,String elementName) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        try {
+            WebElement scroll = driver.findElement(By.xpath(xpath));
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("arguments[0].scrollIntoView(true)",scroll);
+            System.out.println("Successfully entered a value on element " + elementName);
+            logger.log(LogStatus.PASS,"Successfully entered a value on element " + elementName);
+        }
+        catch (Exception e){
+            System.out.println("Unable to scroll to " + elementName + ": " + e);
+        }
+    }
 
 
 }

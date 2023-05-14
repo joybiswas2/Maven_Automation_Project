@@ -14,6 +14,6 @@ public class T2_Xpath_Contains {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[contains(text(),'Mail')]")).click();
+        driver.findElement(By.xpath("//*[contains(text(),'Mail')]")).click();
     }
 }

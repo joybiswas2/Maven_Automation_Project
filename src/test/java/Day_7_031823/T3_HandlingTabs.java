@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 
-public class T2_HandlingTabs {
+public class T3_HandlingTabs {
     public static void main(String[] args) throws InterruptedException {
         //set up your driver through web driver manager
         WebDriverManager.chromedriver().setup();

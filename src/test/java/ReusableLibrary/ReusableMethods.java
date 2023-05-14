@@ -1,5 +1,7 @@
 package ReusableLibrary;
 
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -107,4 +109,16 @@ public class ReusableMethods {
             System.out.println("Unable to switch to tab " + elementName + ": " + e);
         }
     }
+
+    public static void clickMethodByIndex(WebDriver driver, String xpath, int index,String elementName){
+        WebDriverWait wait =  new WebDriverWait(driver,10);
+        try{
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath))).get(index).click();
+            System.out.println("Successfully clicked on element " + elementName);
+        } catch (Exception e) {
+            System.out.println("Unable to click on element " + elementName + ": " + e);
+        }
+    }//end of click method by index
+
+
 }
